@@ -2,9 +2,62 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  overflow-wrap: break-word;
+  min-height: 100vh;
+}
+
+.cvForm {
+  border: 1px solid gray;
+  width: 70%;
+  padding: 1rem;
+  flex: 1;
+  margin: 1rem 0;
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.verticalLine {
+  border-left: 1px solid black;
+  margin: 0 0.5rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  color: azure;
+}
+
+.footer a {
+  position: relative;
+  margin-left: 1rem;
+  color: white;
+  font-size: 2rem;
+  align-items: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
