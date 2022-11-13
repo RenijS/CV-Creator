@@ -43,6 +43,21 @@ h4 {
   margin: 0 0.5rem;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.rightSide {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.leftSide {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .footer {
   display: flex;
   align-items: center;
