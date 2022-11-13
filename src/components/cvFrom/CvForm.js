@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ProfInfo from "./ProfInfo";
 import Profile from "./Profile";
 import Education from "./Education";
-import Exprience from "./Exprience";
+import Experience from "./Experience";
 import Skills from "./Skills";
 
 export default class extends Component {
@@ -12,7 +12,7 @@ export default class extends Component {
         <ProfInfo />
         <Profile />
         <Education />
-        <Exprience />
+        <Experience />
         <Skills />
       </div>
     );
