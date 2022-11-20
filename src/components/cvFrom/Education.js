@@ -79,7 +79,9 @@ export default class education extends Component {
       <div>
         <h2>education</h2>
         <hr />
-        <button onClick={this.handleEduEdit}>+ education</button>
+        <button onClick={this.handleEduEdit} className="plusBtn">
+          + education
+        </button>
         {education.length === 0 && (
           <section>
             <div className="first row">

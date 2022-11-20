@@ -33,7 +33,9 @@ export default class profile extends Component {
         <h2>profile</h2>
         <hr />
         <span>{finalDescription}</span>
-        <button onClick={this.handleProfEdit}>+ Profile</button>
+        <button onClick={this.handleProfEdit} className="plusBtn">
+          + Profile
+        </button>
         {edit && (
           <div>
             <div>

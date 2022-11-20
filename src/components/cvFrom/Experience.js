@@ -122,7 +122,9 @@ export default class experience extends Component {
               </section>
             );
           })}
-        <button onClick={this.handleExpEdit}>+ experience</button>
+        <button onClick={this.handleExpEdit} className="plusBtn">
+          + experience
+        </button>
         {edit && (
           <form id="exp-edit" className="edit-form">
             <div>

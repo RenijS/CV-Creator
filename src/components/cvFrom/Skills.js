@@ -33,7 +33,9 @@ export default class skills extends Component {
       <div>
         <h2>skills</h2>
         <hr />
-        <button onClick={this.handleSkillEdit}>+ Skills</button>
+        <button onClick={this.handleSkillEdit} className="plusBtn">
+          + Skills
+        </button>
         <div>
           {skills.length > 0 &&
             skills.map((skl) => {

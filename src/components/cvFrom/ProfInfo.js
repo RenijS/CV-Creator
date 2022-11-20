@@ -108,7 +108,9 @@ export default class profInfo extends Component {
                 {finalEmail.length > 0 && finalEmail}
               </span>
             </div>
-            <button onClick={this.handleInfoEdit}>+ Info</button>
+            <button onClick={this.handleInfoEdit} className="plusBtn">
+              + Info
+            </button>
           </div>
         )}
 
