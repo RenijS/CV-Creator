@@ -5,6 +5,7 @@
 body {
   min-height: 100vh;
   margin: 0;
+  background-color: snow;
 }
 
 h1,
@@ -12,6 +13,10 @@ h2,
 h3,
 h4 {
   margin: 0;
+}
+
+hr {
+  margin-top: 0;
 }
 
 #root {
@@ -24,12 +29,30 @@ h4 {
   min-height: 100vh;
 }
 
+form {
+  width: fit-content;
+  background-color: snow;
+  border: black 1px solid;
+  margin-left: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+form input {
+  width: 70%;
+}
+
+form button {
+  width: 40%;
+  margin: 0 2px;
+}
+
 .cvForm {
   border: 1px solid gray;
   width: 70%;
   padding: 1rem;
   flex: 1;
   margin: 1rem 0;
+  background-color: white;
 }
 
 .rowContainer {
@@ -48,6 +71,14 @@ h4 {
   flex-direction: row;
 }
 
+.first {
+  font-weight: bold;
+}
+
+.second {
+  font-style: italic;
+}
+
 .rightSide {
   margin-right: 0;
   margin-left: auto;
@@ -56,6 +87,16 @@ h4 {
 .leftSide {
   margin-left: 0;
   margin-right: auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: azure;
+  padding: 0.5rem;
 }
 
 .footer {
