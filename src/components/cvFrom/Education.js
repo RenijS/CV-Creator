@@ -53,19 +53,23 @@ export default class education extends Component {
 
   handleEduSubmit = (e) => {
     this.setState({
-      education: this.state.education.push({
-        school: this.state.school,
-        degree: this.state.degree,
-        location: this.state.location,
-        endDate: this.state.endDate,
-        desc: this.state.desc,
-      }),
+      education: [
+        ...this.state.education,
+        {
+          school: this.state.school,
+          degree: this.state.degree,
+          location: this.state.location,
+          endDate: this.state.endDate,
+          desc: this.state.desc,
+        },
+      ],
       school: "",
       degree: "",
       location: "",
       endDate: "",
       desc: "",
     });
+    this.handleEduEdit();
   };
 
   render() {
@@ -76,19 +80,39 @@ export default class education extends Component {
         <h2>education</h2>
         <hr />
         <button onClick={this.handleEduEdit}>+ education</button>
-        <section>
-          <div className="first row">
-            <span className="leftSide">University</span>
-            <span className="rightSide">Location</span>
-          </div>
-          <div className="second row">
-            <span className="leftSide">Degree</span>
-            <span className="rightSide">End Date</span>
-          </div>
-          <div className="third row">
-            <span>desc</span>
-          </div>
-        </section>
+        {education.length === 0 && (
+          <section>
+            <div className="first row">
+              <span className="leftSide">School</span>
+              <span className="rightSide">Location</span>
+            </div>
+            <div className="second row">
+              <span className="leftSide">Degree</span>
+              <span className="rightSide">Graduation</span>
+            </div>
+            <div className="third row">
+              <span>Description</span>
+            </div>
+          </section>
+        )}
+        {education.length > 0 &&
+          education.map((edu) => {
+            return (
+              <section>
+                <div className="first row">
+                  <span className="leftSide">{edu.school}</span>
+                  <span className="rightSide">{edu.location}</span>
+                </div>
+                <div className="second row">
+                  <span className="leftSide">{edu.degree}</span>
+                  <span className="rightSide">{edu.endDate}</span>
+                </div>
+                <div className="third row">
+                  <span>{edu.desc}</span>
+                </div>
+              </section>
+            );
+          })}
         {edit && (
           <form id="edu-edit" className="edit-form">
             <div>
@@ -122,7 +146,7 @@ export default class education extends Component {
             <div>
               <label htmlFor="end">End Date:</label>
               <input
-                type="Date"
+                type="Month"
                 id="end"
                 onChange={this.handleEndDateChange}
                 value={endDate}
@@ -140,7 +164,7 @@ export default class education extends Component {
                 value={desc}
               ></textarea>
             </div>
-            <div>
+            <div className="buttonContainer">
               <button type="button" onClick={this.handleEduSubmit}>
                 Add
               </button>

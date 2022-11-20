@@ -60,14 +60,17 @@ export default class experience extends Component {
 
   handleExpSubmit = () => {
     this.setState((prevState) => ({
-      expriences: prevState.experiences.push({
-        company: this.state.company,
-        location: this.state.location,
-        position: this.state.position,
-        start: this.state.start,
-        end: this.state.end,
-        desc: this.state.desc,
-      }),
+      experiences: [
+        ...prevState.experiences,
+        {
+          company: this.state.company,
+          location: this.state.location,
+          position: this.state.position,
+          start: this.state.start,
+          end: this.state.end,
+          desc: this.state.desc,
+        },
+      ],
       company: "",
       location: "",
       position: "",
@@ -84,19 +87,41 @@ export default class experience extends Component {
       <div>
         <h2>exprience</h2>
         <hr />
-        <section>
-          <div className="first row">
-            <span className="leftSide">Company</span>
-            <span className="rightSide">Location</span>
-          </div>
-          <div className="second row">
-            <span className="leftSide">Position</span>
-            <span className="rightSide">Start - End</span>
-          </div>
-          <div className="third row">
-            <span>desc</span>
-          </div>
-        </section>
+        {experiences.length === 0 && (
+          <section>
+            <div className="first row">
+              <span className="leftSide">Company</span>
+              <span className="rightSide">Location</span>
+            </div>
+            <div className="second row">
+              <span className="leftSide">Position</span>
+              <span className="rightSide">Start - End</span>
+            </div>
+            <div className="third row">
+              <span>desc</span>
+            </div>
+          </section>
+        )}
+        {experiences.length > 0 &&
+          experiences.map((exp) => {
+            return (
+              <section>
+                <div className="first row">
+                  <span className="leftSide">{exp.company}</span>
+                  <span className="rightSide">{exp.location}</span>
+                </div>
+                <div className="second row">
+                  <span className="leftSide">{exp.position}</span>
+                  <span className="rightSide">
+                    {exp.start} - {exp.end}
+                  </span>
+                </div>
+                <div className="third row">
+                  <span>{exp.desc}</span>
+                </div>
+              </section>
+            );
+          })}
         <button onClick={this.handleExpEdit}>+ experience</button>
         {edit && (
           <form id="exp-edit" className="edit-form">
@@ -131,7 +156,7 @@ export default class experience extends Component {
             <div>
               <label htmlFor="start">Start Date:</label>
               <input
-                type="Date"
+                type="Month"
                 id="start"
                 onChange={this.handleStartChange}
                 value={start}
@@ -140,7 +165,7 @@ export default class experience extends Component {
             <div>
               <label htmlFor="end">End Date:</label>
               <input
-                type="Date"
+                type="Month"
                 id="end"
                 onChange={this.handleEndChange}
                 value={end}
@@ -158,7 +183,7 @@ export default class experience extends Component {
                 value={desc}
               ></textarea>
             </div>
-            <div>
+            <div className="buttonContainer">
               <button type="button" onClick={this.handleExpSubmit}>
                 Add
               </button>
