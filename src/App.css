@@ -116,6 +116,14 @@ form button {
   align-items: center;
 }
 
+.displayGone {
+  display: none;
+}
+
+.active {
+  background-color: #61dafb;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
