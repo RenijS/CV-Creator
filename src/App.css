@@ -38,7 +38,7 @@ form {
 }
 
 form input {
-  width: 70%;
+  width: auto;
 }
 
 form button {
@@ -116,12 +116,49 @@ form button {
   align-items: center;
 }
 
+.buttonContainer {
+  margin-top: 0.5rem;
+}
+
+.previewBtn,
+.workingBtn {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.previewBtn {
+  border-right: 0;
+}
+
+.workingBtn {
+  border-left: 0;
+}
+
+.plusBtn {
+  padding: auto 0.5rem;
+  font-weight: bold;
+}
+
+#desc {
+  white-space: pre-wrap;
+}
+
 .displayGone {
   display: none;
 }
 
 .active {
   background-color: #61dafb;
+  transition: 0.8s background-color ease;
+}
+
+label,
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
