@@ -17,7 +17,7 @@ export default class extends Component {
           <button onClick={this.props.previewMode} className="previewBtn">
             Preview Mode
           </button>
-          <span>or</span>
+          <span> || </span>
           <button
             onClick={this.props.workingMode}
             className="workingBtn active"

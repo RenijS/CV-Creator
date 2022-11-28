@@ -95,7 +95,9 @@ export default class profInfo extends Component {
               </span>
               <div className="verticalLine"></div>
               <span>
-                {finalLinkedin.length > 0 && <a href="/">{finalLinkedin}</a>}
+                {finalLinkedin.length > 0 && (
+                  <a href={finalLinkedin}>linkedIn</a>
+                )}
               </span>
               {finalLinkedin.length > 0 && <div className="verticalLine"></div>}
               <span id="phone">

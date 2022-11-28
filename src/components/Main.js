@@ -20,6 +20,7 @@ export default class main extends Component {
     for (let plusBtn of document.querySelectorAll(".plusBtn")) {
       plusBtn.classList.remove("displayGone");
     }
+
     document.querySelector(".previewBtn").classList.remove("active");
     document.querySelector(".workingBtn").classList.add("active");
   };
@@ -31,6 +32,7 @@ export default class main extends Component {
     for (let plusBtn of document.querySelectorAll(".plusBtn")) {
       plusBtn.classList.add("displayGone");
     }
+
     document.querySelector(".previewBtn").classList.add("active");
     document.querySelector(".workingBtn").classList.remove("active");
   };

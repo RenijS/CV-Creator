@@ -79,42 +79,46 @@ export default class education extends Component {
       <div>
         <h2>education</h2>
         <hr />
-        <button onClick={this.handleEduEdit} className="plusBtn">
-          + education
-        </button>
-        {education.length === 0 && (
-          <section>
-            <div className="first row">
-              <span className="leftSide">School</span>
-              <span className="rightSide">Location</span>
-            </div>
-            <div className="second row">
-              <span className="leftSide">Degree</span>
-              <span className="rightSide">Graduation</span>
-            </div>
-            <div className="third row">
-              <span>Description</span>
-            </div>
-          </section>
-        )}
-        {education.length > 0 &&
-          education.map((edu) => {
-            return (
+        {!edit && (
+          <div>
+            <button onClick={this.handleEduEdit} className="plusBtn">
+              + education
+            </button>
+            {education.length === 0 && (
               <section>
                 <div className="first row">
-                  <span className="leftSide">{edu.school}</span>
-                  <span className="rightSide">{edu.location}</span>
+                  <span className="leftSide">School</span>
+                  <span className="rightSide">Location</span>
                 </div>
                 <div className="second row">
-                  <span className="leftSide">{edu.degree}</span>
-                  <span className="rightSide">{edu.endDate}</span>
+                  <span className="leftSide">Degree</span>
+                  <span className="rightSide">Graduation</span>
                 </div>
                 <div className="third row">
-                  <span>{edu.desc}</span>
+                  <span>Description</span>
                 </div>
               </section>
-            );
-          })}
+            )}
+            {education.length > 0 &&
+              education.map((edu) => {
+                return (
+                  <section>
+                    <div className="first row">
+                      <span className="leftSide">{edu.school}</span>
+                      <span className="rightSide">{edu.location}</span>
+                    </div>
+                    <div className="second row">
+                      <span className="leftSide">{edu.degree}</span>
+                      <span className="rightSide">{edu.endDate}</span>
+                    </div>
+                    <div className="third row">
+                      <span>{edu.desc}</span>
+                    </div>
+                  </section>
+                );
+              })}
+          </div>
+        )}
         {edit && (
           <form id="edu-edit" className="edit-form">
             <div>

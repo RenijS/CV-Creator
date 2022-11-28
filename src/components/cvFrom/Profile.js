@@ -32,12 +32,17 @@ export default class profile extends Component {
       <div>
         <h2>profile</h2>
         <hr />
-        <span>{finalDescription}</span>
-        <button onClick={this.handleProfEdit} className="plusBtn">
-          + Profile
-        </button>
-        {edit && (
+        {!edit && (
           <div>
+            <span>{finalDescription}</span>
+            <button onClick={this.handleProfEdit} className="plusBtn">
+              + Profile
+            </button>
+          </div>
+        )}
+
+        {edit && (
+          <form>
             <div>
               <label htmlFor="desc">Description</label>
               <br />
@@ -57,7 +62,7 @@ export default class profile extends Component {
             <button type="button" onClick={this.handleProfEdit}>
               Cancel
             </button>
-          </div>
+          </form>
         )}
       </div>
     );

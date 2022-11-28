@@ -87,44 +87,49 @@ export default class experience extends Component {
       <div>
         <h2>exprience</h2>
         <hr />
-        {experiences.length === 0 && (
-          <section>
-            <div className="first row">
-              <span className="leftSide">Company</span>
-              <span className="rightSide">Location</span>
-            </div>
-            <div className="second row">
-              <span className="leftSide">Position</span>
-              <span className="rightSide">Start - End</span>
-            </div>
-            <div className="third row">
-              <span>desc</span>
-            </div>
-          </section>
-        )}
-        {experiences.length > 0 &&
-          experiences.map((exp) => {
-            return (
+        {!edit && (
+          <div>
+            <button onClick={this.handleExpEdit} className="plusBtn">
+              + experience
+            </button>
+            {experiences.length === 0 && (
               <section>
                 <div className="first row">
-                  <span className="leftSide">{exp.company}</span>
-                  <span className="rightSide">{exp.location}</span>
+                  <span className="leftSide">Company</span>
+                  <span className="rightSide">Location</span>
                 </div>
                 <div className="second row">
-                  <span className="leftSide">{exp.position}</span>
-                  <span className="rightSide">
-                    {exp.start} - {exp.end}
-                  </span>
+                  <span className="leftSide">Position</span>
+                  <span className="rightSide">Start - End</span>
                 </div>
                 <div className="third row">
-                  <span>{exp.desc}</span>
+                  <span>desc</span>
                 </div>
               </section>
-            );
-          })}
-        <button onClick={this.handleExpEdit} className="plusBtn">
-          + experience
-        </button>
+            )}
+            {experiences.length > 0 &&
+              experiences.map((exp) => {
+                return (
+                  <section>
+                    <div className="first row">
+                      <span className="leftSide">{exp.company}</span>
+                      <span className="rightSide">{exp.location}</span>
+                    </div>
+                    <div className="second row">
+                      <span className="leftSide">{exp.position}</span>
+                      <span className="rightSide">
+                        {exp.start} - {exp.end}
+                      </span>
+                    </div>
+                    <div className="third row">
+                      <span>{exp.desc}</span>
+                    </div>
+                  </section>
+                );
+              })}
+          </div>
+        )}
+
         {edit && (
           <form id="exp-edit" className="edit-form">
             <div>
