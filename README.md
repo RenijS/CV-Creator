@@ -1,3 +1,7 @@
+<a href="https://poetic-babka-6021f4.netlify.app/">Live Preview</a>
+
+<hr/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
